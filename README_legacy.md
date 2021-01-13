@@ -2,7 +2,11 @@
 
 All things related to vision
 
-## Quick start
+## Remote (Recommended)
+
+See the [Google Colab Notebook](https://colab.research.google.com/github/VidunderGunder/ml-ady-vision/blob/master/vision.ipynb).
+
+## Local (WIP)
 
 _Note: Only tested on Windows 10, using Anaconda PowerShell_
 
