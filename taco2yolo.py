@@ -5,26 +5,30 @@ import numpy as np
 import tqdm
 from pycocotools.coco import COCO
 import splitfolders
-import argparse
+
+# import argparse
 
 # %%
 
-parser = argparse.ArgumentParser(description="")
-parser.add_argument(
-    "--in_path",
-    required=False,
-    default="./drive/MyDrive/ml-ady-data/taco/",
-    help="Path to taco data (input)",
-)
-parser.add_argument(
-    "--out_path",
-    required=False,
-    default="./drive/MyDrive/ml-ady-data/yolo/",
-    help="Path to yolo data (output)",
-)
-args = parser.parse_args()
+# parser = argparse.ArgumentParser(description="")
+# parser.add_argument(
+#     "--in_path",
+#     required=False,
+#     default="./drive/MyDrive/ml-ady-data/taco/",
+#     help="Path to taco data (input)",
+# )
+# parser.add_argument(
+#     "--out_path",
+#     required=False,
+#     default="./drive/MyDrive/ml-ady-data/yolo/",
+#     help="Path to yolo data (output)",
+# )
+# args = parser.parse_args()
 
-data = COCO(annotation_file=args.in_path + "annotations.json")
+in_path = "./drive/MyDrive/ml-ady-data/taco/"  # Path to taco data (input)
+out_path = "./drive/MyDrive/ml-ady-data/yolo/"  # Path to yolo data (output)
+
+data = COCO(annotation_file=in_path + "annotations.json")
 
 # %%
 # Get classes,
@@ -68,7 +72,7 @@ class_num = {}
 # %%
 # Create temporary folders
 
-yolo_data_all_path = args.out_path + "all/"
+yolo_data_all_path = out_path + "all/"
 save_base_path = yolo_data_all_path + "labels/"
 save_image_path = yolo_data_all_path + "images/"
 
@@ -126,7 +130,7 @@ for index, img_id in tqdm.tqdm(
         fp.writelines(lines)
     # if exists:
     shutil.copy(
-        args.in_path + img_info["file_name"],
+        in_path + img_info["file_name"],
         os.path.join(save_image_path, save_name),
     )
     # else:
@@ -135,7 +139,7 @@ for index, img_id in tqdm.tqdm(
 # %%
 splitfolders.ratio(
     yolo_data_all_path,
-    output=args.out_path + "split",
+    output=out_path + "split",
     seed=42,
     # Train, validation, test
     ratio=(0.8, 0.1, 0.1),
