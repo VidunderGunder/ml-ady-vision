@@ -23,10 +23,6 @@ Datasets used for training:
 
 ### Quick Start 🚀
 
-[Download the custom weights](https://drive.google.com/file/d/12bzxSK9DIJaJYcg5py_qm-pkxRrJr94k/view?usp=sharing)
-
-Place them in the project's root
-
 Go into the `yolov5` folder
 
 ```sh
