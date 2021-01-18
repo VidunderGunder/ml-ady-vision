@@ -6,12 +6,25 @@ All things related to vision 👀
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Detection 🔍](#detection-)
+- [Vision (All modules combined)](#vision-all-modules-combined)
+- [Detection (module) 🔍](#detection-module-)
   - [Quick Start 🚀](#quick-start-)
-- [Depth 🤽‍♂️](#depth-️)
+- [Depth (module) 🤽‍♂️](#depth-module-️)
   - [Quick Start 🚀](#quick-start--1)
 
-## Detection 🔍
+## Vision (All modules combined)
+
+Install [Anaconda](https://www.anaconda.com/products/individual)
+
+Create the combined environment
+
+```shell
+conda env create -f environment.yml
+```
+
+_TODO: Combine detection and depth_
+
+## Detection (module) 🔍
 
 [YOLOv5](https://github.com/ultralytics/yolov5) with custom training to detect trash
 
@@ -25,13 +38,13 @@ Datasets used for training:
 
 Go into the `yolov5` folder
 
-```sh
+```shell
 cd yolov5
 ```
 
 Install requirements
 
-```sh
+```shell
 pip install -r requirements.txt
 ```
 
@@ -41,7 +54,7 @@ Run inference
 python detect.py --source "../input/trash.jpg" --weights "../detection_weights.pt" --img-size 640 --conf 0.675 --exist-ok --project ../ --name output
 ```
 
-## Depth 🤽‍♂️
+## Depth (module) 🤽‍♂️
 
 [AdaBins](https://github.com/shariqfarooq123/AdaBins) with pretrained models to estimate depth map
 
@@ -60,17 +73,17 @@ Install [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) (tested on 10.
 
 Install [cuDNN](https://developer.nvidia.com/rdp/cudnn-download) (tested on 8.0.5 for CUDA 10.2)
 
-Install [Anaconda](https://www.anaconda.com/products/individual).
+Install [Anaconda](https://www.anaconda.com/products/individual)
 
 Create virtual environment (tested on python 3.6.6)
 
-```sh
+```shell
 conda create -n vision python=3.6.6 anaconda
 ```
 
 Install PyTorch (tested on 1.7.0 and 1.7.1)
 
-```sh
+```shell
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 ```
 
@@ -78,13 +91,13 @@ See [get started](https://pytorch.org/get-started/locally/) if not following pre
 
 Install Taqaddum
 
-```sh
+```shell
 conda install -c conda-forge tqdm
 ```
 
 Run the setup
 
-```sh
+```shell
 setup_depth.sh
 ```
 
@@ -94,6 +107,6 @@ Place pretrained weights in `pretrained/`
 
 Test depth inference
 
-```sh
+```shell
 python depth.py
 ```
