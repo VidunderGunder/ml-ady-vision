@@ -20,7 +20,7 @@ Install [cuDNN](https://developer.nvidia.com/rdp/cudnn-download) (tested on 8.0.
 
 Install [Anaconda](https://www.anaconda.com/products/individual)
 
-Create the combined environment (Warning: Not yet tested)
+Create the combined environment (Warning: Not yet tested - if it doesn't work, use the separate guides below)
 
 ```shell
 conda env create -f environment.yml
