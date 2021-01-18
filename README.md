@@ -69,12 +69,12 @@ conda install -c conda-forge tqdm
 Run the setup
 
 ```sh
-depth_setup.sh
+setup_depth.sh
 ```
 
 [Download pretrained weights](https://drive.google.com/drive/folders/1nYyaQXOBjNdUJDsmJpcRpu6oE55aQoLA?usp=sharing)
 
-Place pretrained weights in `AdaBins/pretrained/`
+Place pretrained weights in `pretrained/`
 
 Test depth inference
 

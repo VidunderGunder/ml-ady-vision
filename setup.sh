@@ -1,0 +1,2 @@
+setup_depth.sh
+setup_detection.sh
