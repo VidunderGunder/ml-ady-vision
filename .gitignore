@@ -1,4 +1,12 @@
-.vscode/
+# General
+# .vscode/ # Contains fix for multiple python roots
+__pycache__/
+
+# Detection
 TACO/
 drive/
 yolov5/
+
+# Depth
+AdaBins/
+pretrained/

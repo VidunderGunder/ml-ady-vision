@@ -1,93 +1,83 @@
-# MLAdy Vision
+# MLAdy Vision <!-- omit in toc -->
 
-All things related to vision
+All things related to vision 👀
 
-## Remote (Recommended)
+![vision](docs/vision.jpg)
 
-See the [Google Colab Notebook](https://colab.research.google.com/github/VidunderGunder/ml-ady-vision/blob/master/vision.ipynb).
+## Table of Contents <!-- omit in toc -->
 
-## Local (WIP)
+- [Detection 🔍](#detection-)
+  - [Quick Start 🚀](#quick-start-)
+- [Depth 🤽‍♂️](#depth-️)
+  - [Quick Start 🚀](#quick-start--1)
 
-_Note: Only tested on Windows 10, using Anaconda PowerShell_
+## Detection 🔍
 
-Install [Anaconda](https://www.anaconda.com/products/individual#Downloads)
+[YOLOv5](https://github.com/ultralytics/yolov5) with custom training to detect trash
 
-Install [CUDA 11.0 (Update 1)](https://developer.nvidia.com/cuda-11.0-update1-download-archive)
+See `train_trash_detection.ipynb` for training
 
-Install [cuDNN 8.0.4 for CUDA 11.0](https://developer.nvidia.com/rdp/cudnn-archive)
+Datasets used for training:
 
-Open an Anaconda PowerShell Prompt in project root
+- [TACO](http://tacodataset.org/)
 
-Create virtual environmet
+### Quick Start 🚀
 
-```ps
-conda create -n vision python=3.8
+TODO
+
+## Depth 🤽‍♂️
+
+[AdaBins](https://github.com/shariqfarooq123/AdaBins) with pretrained models to estimate depth map
+
+Datasets used for training:
+
+- [KITTI](http://www.cvlibs.net/datasets/kitti/eval_depth_all.php) *outdoors*
+- [NYU](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) *indoors*
+
+
+### Quick Start 🚀
+
+_The guide requires an NVIDIA GPU with CUDA-support._  
+_CPU-only without CUDA may work, but you're on your own._
+
+Install [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) (tested on 10.2)
+
+Install [cuDNN](https://developer.nvidia.com/rdp/cudnn-download) (tested on 8.0.5 for CUDA 10.2)
+
+Install [Anaconda](https://www.anaconda.com/products/individual).
+
+Create virtual environment (tested on python 3.6.6)
+
+```sh
+conda create -n vision python=3.6.6 anaconda
 ```
 
-Activate virtual environmet
+Install PyTorch (tested on 1.7.0 and 1.7.1)
 
-```ps
-conda activate vision
+```sh
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 ```
 
-Install PyTorch with CUDA/cuDNN-support
+See [get started](https://pytorch.org/get-started/locally/) if not following previous recommendations, as you may want another version of PyTorch.
 
-```ps
-conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
+Install Taqaddum
+
+```sh
+conda install -c conda-forge tqdm
 ```
 
-Install required packages for TACO
+Run the setup
 
-```ps
-pip install -r yolov5/requirements.txt
+```sh
+depth_setup.sh
 ```
 
-Install required packages for YOLOv5
+[Download pretrained weights](https://drive.google.com/drive/folders/1nYyaQXOBjNdUJDsmJpcRpu6oE55aQoLA?usp=sharing)
 
-```ps
-pip install -r TACO/requirements.txt
-pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+Place pretrained weights in `AdaBins/pretrained/`
+
+Test depth inference
+
+```sh
+python depth.py
 ```
-
-Download TACO-dataset
-
-```ps
-cd TACO
-python download.py
-```
-
-Go back to project root
-
-```ps
-cd ..
-```
-
-Install packages required for `taco2yolo.py`
-
-```ps
-pip install split-folders
-```
- 
-Convert TACO to YOLO
-
-```ps
-python taco2yolo.py
-```
-
-Train YOLOv5 on TACO-dataset
-
-```ps
-cd yolov5
-python train.py --data taco.yaml --img-size 128 --cfg yolov5s.yaml --weights yolov5s.pt --device 0 --batch-size 4
-```
-
-_Note: Parameters meant for testing only_
-
-## Hardware
-
-Tested on:
-
-- OS: Windows 10 Pro
-- GPU: RTX 2070 8GB
-- CPU: Intel Xeon W-2125
-- RAM: 16GB
