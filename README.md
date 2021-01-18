@@ -14,9 +14,13 @@ All things related to vision 👀
 
 ## Vision (All modules combined)
 
+Install [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) (tested on 10.2)
+
+Install [cuDNN](https://developer.nvidia.com/rdp/cudnn-download) (tested on 8.0.5 for CUDA 10.2)
+
 Install [Anaconda](https://www.anaconda.com/products/individual)
 
-Create the combined environment
+Create the combined environment (Warning: Not yet tested)
 
 ```shell
 conda env create -f environment.yml
