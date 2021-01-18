@@ -23,7 +23,27 @@ Datasets used for training:
 
 ### Quick Start 🚀
 
-TODO
+[Download the custom weights](https://drive.google.com/file/d/12bzxSK9DIJaJYcg5py_qm-pkxRrJr94k/view?usp=sharing)
+
+Place them in the project's root
+
+Go into the `yolov5` folder
+
+```sh
+cd yolov5
+```
+
+Install requirements
+
+```sh
+pip install -r requirements.txt
+```
+
+Run inference
+
+```shell
+python detect.py --source "../input/trash.jpg" --weights "../detection_weights.pt" --img-size 640 --conf 0.675 --exist-ok --project ../ --name output
+```
 
 ## Depth 🤽‍♂️
 
