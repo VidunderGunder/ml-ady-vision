@@ -88,7 +88,7 @@ conda create -n vision python=3.6.6 anaconda
 Install PyTorch (tested on 1.7.0 and 1.7.1)
 
 ```shell
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 
 See [get started](https://pytorch.org/get-started/locally/) if not following previous recommendations, as you may want another version of PyTorch.
@@ -101,13 +101,15 @@ conda install -c conda-forge tqdm
 
 Run the setup
 
+MacOS and Linux:
+```shell
++chmod +x setup_depth.sh
+./setup_depth.sh
+```
+For Windows:
 ```shell
 setup_depth.sh
 ```
-
-[Download pretrained weights](https://drive.google.com/drive/folders/1nYyaQXOBjNdUJDsmJpcRpu6oE55aQoLA?usp=sharing)
-
-Place pretrained weights in `pretrained/`
 
 Test depth inference
 
