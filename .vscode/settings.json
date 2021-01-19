@@ -1,3 +1,8 @@
 {
-  "python.analysis.extraPaths": ["AdaBins", "yolov5", "TACO"]
+  "python.analysis.extraPaths": [
+    "AdaBins",
+    "yolov5",
+    "TACO"
+  ],
+  "python.pythonPath": "/usr/local/anaconda3/envs/njord/bin/python"
 }
