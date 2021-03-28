@@ -28,6 +28,12 @@ Datasets used for training:
 
 ### Quick Start 🚀
 
+Clone [YOLOv5](https://github.com/ultralytics/yolov5) inside `ml-ady-vision`
+
+```shell
+git clone https://github.com/ultralytics/yolov5
+```
+
 Go into the `yolov5` folder
 
 ```shell
@@ -57,9 +63,6 @@ Datasets used for training:
 
 
 ### Quick Start 🚀
-
-_The guide requires an NVIDIA GPU with CUDA-support._  
-_CPU-only inference works, but training wise you're on your own._
 
 Install [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) (tested on 10.2)
 
