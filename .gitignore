@@ -2,11 +2,13 @@
 # .vscode/ # Contains fix for multiple python roots
 __pycache__/
 output/
+*.onnx
 
 # Detection
 TACO/
 drive/
 yolov5/
+tensorrtx/
 
 # Depth
 AdaBins/
