@@ -52,6 +52,12 @@ Run inference
 python detect.py --source "../input/trash.jpg" --weights "../detection_weights.pt" --img-size 640 --conf 0.675 --exist-ok --project ../ --name output
 ```
 
+Export ONNX-model
+
+```shell
+python models/export.py --weights "../detection_weights.pt" --img 640 --batch 1
+```
+
 ## Depth (module) 🤽‍♂️
 
 [AdaBins](https://github.com/shariqfarooq123/AdaBins) with pretrained models to estimate depth map
